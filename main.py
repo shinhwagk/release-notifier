@@ -13,7 +13,7 @@ if __name__ == "__main__":
     print(res1.status_code)
     if res1.status_code == 200:
         tags = res1.json()
-        for tag in tags:
+        for tag in tags[100:]:
             ot = tag['object']['type']
             ou = tag['object']['url']
             if ot == 'tag':
