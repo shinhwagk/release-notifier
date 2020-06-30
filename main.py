@@ -14,13 +14,15 @@ if __name__ == "__main__":
     if res.status_code == 200:
         tags = res.json()
         for tag in tags:
-            if tag['object']['type'] == 'tag':
-                res = requests.get(tag['object']['url'])
+            ot = tag['object']['type']
+            ou = tag['object']['url']
+            if ot == 'tag':
+                res = requests.get(ou)
                 if res.status_code == 200:
-                    tag = res.json()
+                    t = res.json()
                     tagDate = datetime.strptime(
-                        tag['tagger']['date'], "%Y-%m-%dT%H:%M:%SZ")
-                    version = tag['tag']
+                        t['tagger']['date'], "%Y-%m-%dT%H:%M:%SZ")
+                    version = t['tag']
                     tagd = tagDate + timedelta(hours=offset)
                 print(tagd,version)
                 if tagDate + timedelta(hours=offset) >= datetime.now():
