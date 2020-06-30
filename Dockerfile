@@ -1,9 +1,7 @@
-FROM alpine
+FROM python:3
 
-RUN apk add --no-cache openssl bash && \
-  rm -rf /var/cache/apk/*
+RUN pip install requests
 
-ADD entrypoint.sh /entrypoint.sh
-RUN chmod +x entrypoint.sh
+ADD main.py .
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["python", "/main.py"]
