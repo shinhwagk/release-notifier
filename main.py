@@ -8,18 +8,18 @@ repo = os.getenv('repo')
 offset = int(os.getenv('offset'))  # hour
 
 if __name__ == "__main__":
-    res = requests.get(
+    res1 = requests.get(
         "https://api.github.com/repos/{}/{}/git/refs/tags".format(owner, repo))
-    print(res.status_code)
-    if res.status_code == 200:
-        tags = res.json()
+    print(res1.status_code)
+    if res1.status_code == 200:
+        tags = res1.json()
         for tag in tags:
             ot = tag['object']['type']
             ou = tag['object']['url']
             if ot == 'tag':
-                res = requests.get(ou)
-                if res.status_code == 200:
-                    t = res.json()
+                res2 = requests.get(ou)
+                if res2.status_code == 200:
+                    t = res2.json()
                     tagDate = datetime.strptime(
                         t['tagger']['date'], "%Y-%m-%dT%H:%M:%SZ")
                     version = t['tag']
