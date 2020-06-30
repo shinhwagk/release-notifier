@@ -12,7 +12,8 @@ if __name__ == "__main__":
         "https://api.github.com/repos/{}/{}/git/refs/tags".format(owner, repo))
     print(res.status_code)
     if res.status_code == 200:
-        for tag in res.json():
+        tags = res.json()
+        for tag in tags:
             if tag['object']['type'] == 'tag':
                 res = requests.get(tag['object']['url'])
                 if res.status_code == 200:
