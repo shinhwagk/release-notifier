@@ -17,6 +17,7 @@ if __name__ == "__main__":
             ot = tag['object']['type']
             ou = tag['object']['url']
             if ot == 'tag':
+                print(ou)
                 res2 = requests.get(ou)
                 if res2.status_code == 200:
                     t = res2.json()
