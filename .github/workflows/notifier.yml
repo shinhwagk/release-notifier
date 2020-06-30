@@ -1,5 +1,9 @@
 name: Test actions crypto
-on: [push]
+on: 
+    schedule:
+        - cron: '* * * * *'
+    push:
+        branches: master
 
 jobs:
     build:
