@@ -21,6 +21,6 @@ if __name__ == "__main__":
                         tag['tagger']['date'], "%Y-%m-%dT%H:%M:%SZ")
                     version = tag['tag']
                     tagd = tagDate + timedelta(hours=offset)
-                print(tagd)
+                print(tagd,version)
                 if tagDate + timedelta(hours=offset) >= datetime.now():
                     print(version)
