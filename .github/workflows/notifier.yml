@@ -11,10 +11,8 @@ jobs:
       runs-on: ubuntu-latest
   
       steps:
-      - uses: shinhwagk/monitoring_document@master
+      - uses: shinhwagk/release-notifier@master
         env:
-          owner: "kubernetes"
-          repo: "website"
+          owner: "ceph"
+          repo: "ceph"
           offset_hours: 1
-          prefix: "content/en"
-          incoming_webhooks: ${{ secrets.incoming_webhooks }}
