@@ -4,14 +4,14 @@ author: 'shinhwagk'
 inputs:
   owner: 
     description: 'The Go version to download (if necessary) and use. Example: 1.9.3'
-    required: true
+    required: false
     description: ''
   repo: 
     description: 'The Go version to download (if necessary) and use. Example: 1.9.3'
-    required: true
+    required: false
     description: ''
   crypto-password:
-    required: true
+    required: false;
     description: ''
   incoming_webhooks:
     description: 'The Go version to download (if necessary) and use. Example: 1.9.3'
