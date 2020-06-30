@@ -1,0 +1,27 @@
+name: 'release-notifier'
+description: 'a simple crypto(encrypt/decrypt) action for file or directory'
+author: 'shinhwagk'
+inputs:
+  owner: 
+    description: 'The Go version to download (if necessary) and use. Example: 1.9.3'
+    required: true
+    description: ''
+  repo: 
+    description: 'The Go version to download (if necessary) and use. Example: 1.9.3'
+    required: true
+    description: ''
+  crypto-password:
+    required: true
+    description: ''
+  incoming_webhooks:
+    description: 'The Go version to download (if necessary) and use. Example: 1.9.3'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.crypto-path }}
+    - ${{ inputs.crypto-action }}
+    - ${{ inputs.crypto-password }}
+branding:
+  icon: 'unlock'
+  color: 'orange'
