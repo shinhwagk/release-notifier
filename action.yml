@@ -10,9 +10,6 @@ inputs:
     description: 'The Go version to download (if necessary) and use. Example: 1.9.3'
     required: false
     description: '2'
-  crypto-password:
-    required: false;
-    description: '1'
   incoming_webhooks:
     description: 'The Go version to download (if necessary) and use. Example: 1.9.3'
 runs:
